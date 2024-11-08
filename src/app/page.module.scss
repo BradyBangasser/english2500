@@ -1,0 +1,29 @@
+.signinForm {
+    border: 1px solid rgb(0, 255, 0);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    font-size: 3vh;
+    margin: 1vh;
+
+    & label {
+        height: min;
+        margin-bottom: 1px;
+    }
+
+    & input {
+        background-color: transparent;
+        border: 1px solid rgb(0, 255, 0);
+        border-radius: 5px;
+        font-size: 2vh;
+        min-width: 33vw;
+        margin: 5px; 
+        min-height: 5vh;
+        margin-top: 0px;
+        padding: 5px;
+        &:active {
+            border: 1px solid rgb(0, 255, 0);
+        }
+    }
+}
