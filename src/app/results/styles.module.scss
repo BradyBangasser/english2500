@@ -1,0 +1,11 @@
+.tip {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    & .tipForm {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
