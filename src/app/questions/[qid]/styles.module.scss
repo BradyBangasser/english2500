@@ -1,0 +1,17 @@
+.question {
+    text-align: center;
+    & h1 {
+        font-size: 5vh;
+    }
+
+    & .answers {
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-rows: 200px 200px;
+        grid-template-columns: 200px 200px;
+
+        & button {
+            
+        }
+    }
+}

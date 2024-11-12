@@ -1,4 +1,6 @@
 import { useRouter } from "next/router"
+import style from "./styles.module.scss"
+import Answer from "./Answer.tsx"
 
 interface Answer {
     correct: bool
@@ -27,9 +29,13 @@ const questions: Question[] = [{
     }]
 }]
 
+
 export default async function Question({ params } : { params: Promise< { qid: string }> }) {
     const qid = (await params).qid;
-    console.log(questions, questions.length)
+    function action(h) {
+        console.log(h)
+
+    }
 
     if (qid >= questions.length) {
         return (
@@ -38,15 +44,13 @@ export default async function Question({ params } : { params: Promise< { qid: st
     }
 
     return (
-        <div>
+        <div className={style.question}>
             <h1>{questions[qid].question}</h1>
-            {questions[qid].answers.map(answer => {
-                return (
-                    <div key={answer.answer}>
-                        <h2>{answer.answer}</h2>
-                    </div>
-                )
-            })}
+            <div className={style.answers}>
+                {questions[qid].answers.map(answer => {
+                    return <Answer answer={answer} />
+                })}
+            </div>
         </div>
     )
 }

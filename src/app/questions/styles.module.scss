@@ -1,0 +1,21 @@
+.begin {
+    text-align: center;
+    & h1 {
+        font-size: 5vh;
+    }
+
+    & h2 {
+        font-size: 4vh;
+    }
+
+    & h3 {
+        font-size: 3vh;
+    }
+    & h2 {
+        font-size: 2vh;
+    }
+
+    & .start {
+        color: rgb(255, 0, 0)
+    }
+}

@@ -1,5 +1,7 @@
 "use client"
 
+import style from "./styles.module.scss"
+
 interface FAQQuestion {
     question: string
     answer: string
@@ -29,15 +31,11 @@ export default function Question() {
     }
 
     return (
-        <div className={``}>
+        <div className={`${style.begin}`}>
             <h1>Welcome to the Data Game</h1>
-            <h3>The only online game that admits to stealing your data</h3>
+            <h3>The only game that admits to stealing your data</h3>
 
-            <p>The goal of this game is to reach the end of this site without letting it steal data</p>
-            <div>
-            </div>
-
-            <h1>Press Enter to Begin</h1>
+            <h1 className={style.start}>Press Enter to Begin</h1>
         </div>
         )
 }
