@@ -1,31 +1,23 @@
-import Image from "next/image";
-import Form from "next/form";
-import style from "./page.module.scss"
-
+import Form from "next/form"
+import style from "./styles.module.scss"
 export default function Home() {
-  return (
-    <div className="flex flex-col h-screen items-center">
-        <div className="glitch">
-            <h2>Welcome To The</h2>
-            <h1>Data Game</h1>
-        </div>
-        <div className="flex justify-center flex-col items-center">
-            <Form className={style.signinForm} >
-                <label>First Name</label>
-                <input placeholder="John" />
-                <label>Last Name</label>
-                <input placeholder="Doe" />
-                <label>Email</label>
-                <input type="email" placeholder="john.doe@microsocks.org" />
-                <button>Submit</button>
-                <hr />
-                <h2>Or</h2>
-                <hr />
-                <label>First Name</label>
-                <input placeholder="John" />
-                <button>Continue as Guest</button>
+    function FormInput({ label, name, placeholder }: { label: string, name: string, placeholder?: string }) {
+        return (
+            <div className={style.formInput}>
+                <p>{label}: </p>
+                <input name={name} placeholder={placeholder} required />
+            </div>
+        )
+    }
+
+    return (
+        <div>
+            <Form action="/questions" className={style.onboardingForm}>
+                <FormInput name="firstName" label="First Name" placeholder="Connor" />
+                <FormInput name="lastName" label="Last Name" placeholder="Tynan" />
+                <FormInput name="email" label="Email" placeholder="ctynan@microsocks.com" />
+                <input type="submit" value="Let's Start" />
             </Form>
         </div>
-    </div>
-  );
+    )
 }

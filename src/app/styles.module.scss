@@ -1,0 +1,32 @@
+.onboardingForm {
+    text-align: center;
+    & > input {
+        color: rgb(255, 0, 0);
+        margin: auto;
+        margin-top: 10px;
+        border: 1px solid rgba(255, 0, 0, 0.5);
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    & .formInput {
+        display: flex;
+
+        & input {
+            background-color: transparent;
+            border-bottom: 1px solid rgba(0, 255, 0, .5);
+            transition: .5s;
+            outline: none;
+            padding-left: 5px;
+            margin-left: auto;
+            color: rgba(0, 255, 0, .5);
+            width: 20vw;
+
+            &:focus {
+                border: 0px;
+                border-bottom: 1px solid rgba(0, 255, 0, 1);
+                color: rgba(0, 255, 0, .8);
+            }
+        }
+    }
+}
